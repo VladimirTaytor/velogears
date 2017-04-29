@@ -1,0 +1,20 @@
+{
+  "development": {
+    "dialect": "mysql",
+    "username": "root",
+    "password": "root",
+    "database": "velogears",
+    "host": "127.0.0.1",
+    "define": {
+      "charset": "utf8",
+      "collate": "utf8_general_ci"
+    }
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "velogears_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
