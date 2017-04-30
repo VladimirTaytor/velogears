@@ -1,13 +1,18 @@
 var express = require('express');
 var path = require('path');
+var fs = require('fs');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var helmet = require('helmet');
+var rfs = require('rotating-file-stream');
 
 var api = require('./routes/api');
 var index = require('./routes/index');
 var users = require('./routes/users');
+
+var logDirectory = path.join(__dirname, 'log');
 
 var app = express();
 
@@ -15,13 +20,26 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-// uncomment after placing your favicon in /public
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// 'production' usage only
+if ( app.get('env') === 'production' ) {
+    app.use(helmet());
+
+    // Logger settings
+    fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+    var accessLogStream = rfs('access.log', {
+        interval: '1d', // rotate daily
+        path: logDirectory
+    });
+    app.use(logger('combined', {stream: accessLogStream}))
+} else {
+    app.use(logger('dev'));
+}
 
 app.use('/', index);
 app.use('/users', users);

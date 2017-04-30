@@ -11,10 +11,14 @@
     }
   },
   "production": {
+    "dialect": "mysql",
     "username": "root",
-    "password": null,
+    "password": "root",
     "database": "velogears_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "define": {
+      "charset": "utf8",
+      "collate": "utf8_general_ci"
+    }
   }
 }
