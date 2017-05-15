@@ -1,7 +1,10 @@
 doctype html
 html
   head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    title 'VeloGears'
+    link(rel='stylesheet', href='/stylesheets/style.min.css')
+    link(rel='stylesheet', href='/bower_components/bootstrap/dist/css/bootstrap.min.css')
   body
+    include header
     block content
+    include footer
