@@ -7,17 +7,21 @@
     "production": "NODE_ENV='production' node ./bin/www"
   },
   "dependencies": {
-    "rotating-file-stream": "^1.2.2",
-    "serve-favicon": "~2.4.2",
-    "cookie-parser": "~1.4.3",
     "body-parser": "~1.17.1",
-    "express": "~4.15.2",
-    "morgan": "~1.8.1",
-    "helmet": "^3.5.0",
+    "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "express": "~4.15.2",
+    "helmet": "^3.5.0",
     "jade": "~1.11.0",
+    "morgan": "~1.8.1",
     "mysql": "^2.13.0",
+    "rotating-file-stream": "^1.2.2",
     "sequelize": "^3.30.4",
-    "sequelize-cli": "^2.7.0"
+    "sequelize-cli": "^2.7.0",
+    "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "less": "^2.7.2",
+    "less-plugin-clean-css": "^1.5.1"
   }
 }
