@@ -1,0 +1,21 @@
+{
+  "name": "velogears",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Vova Pihol <cetncat@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/VladimirTaytor/velogears",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap.native": "^2.0.10",
+    "bootstrap": "^3.3.7"
+  }
+}
