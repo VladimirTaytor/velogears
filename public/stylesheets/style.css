@@ -7,3 +7,12 @@ html {
 a {
   color: #00B7FF;
 }
+.navbar-default {
+  min-height: 75px;
+  padding: 10px;
+}
+.navbar-default img {
+  max-width: 50px;
+  max-height: 50px;
+  margin-right: 10px;
+}
