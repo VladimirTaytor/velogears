@@ -7,7 +7,7 @@ nav.navbar.navbar-default
                 span.icon-bar
                 span.icon-bar
                 span.icon-bar
-            a(href='#')
+            a(href='/')
                 img(src='/images/logo.png')
         // Collect the nav links, forms, and other content for toggling
         #navbar-collapse.collapse.navbar-collapse
@@ -36,6 +36,8 @@ nav.navbar.navbar-default
                     input.form-control(type='text', placeholder='Search')
                 button.btn.btn-default(type='submit') Submit
             ul.nav.navbar-nav.navbar-right
+                li
+                    a(href='/register') Login / Register
                 li.dropdown
                     a.dropdown-toggle(href='#', data-toggle='dropdown', role='button', aria-haspopup='true', aria-expanded='false')
                         | Dropdown
@@ -50,6 +52,8 @@ nav.navbar.navbar-default
                         li.divider(role='separator')
                         li
                             a(href='#') Separated link
+                li
+                    a.cart-icon.glyphicon.glyphicon-shopping-cart
         // /.navbar-collapse
     // /.container-fluid
 
