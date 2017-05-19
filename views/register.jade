@@ -2,15 +2,24 @@ extends layout
 
 block content
     .container
-        form#registration.center-block
+        form#registration.center-block(action='/register', method='POST')
+            .form-group
+                label Username
+                input.form-control(type='text', name='username', placeholder='Username')
             .form-group
                 label Email
-                input.form-control(type='email', placeholder='Email')
+                input.form-control(type='email', name='email' placeholder='Email')
             .form-group
                 label Password
-                input.form-control(type='password', placeholder='Password')
+                input.form-control(type='password', name='password' placeholder='Password')
             .form-group
                 label Repeat password
                 input.form-control(type='password', placeholder='Repeat password')
             .form-group
-                button.btn.btn-default Submit
+                label First name
+                input.form-control(type='text', name='firstName' placeholder='First name')
+            .form-group
+                label Last name
+                input.form-control(type='text', name='lastName' placeholder='Last name')
+            .form-group
+                button.btn.btn-default Register
