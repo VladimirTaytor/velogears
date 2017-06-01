@@ -19,9 +19,11 @@ router.post('/register', function (req, res) {
         email: user.email,
         firstName: user.firstName,
         lastName: user.lastName
-    }).then(function () {
-        res.redirect('/');
-    })
+    }).then(function (created) {
+        created.update({
+            password: created.generateHash(user.password)
+        })
+    });
 });
 
 module.exports = router;
