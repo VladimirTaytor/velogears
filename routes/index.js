@@ -20,9 +20,12 @@ router.post('/register', function (req, res) {
         firstName: user.firstName,
         lastName: user.lastName
     }).then(function (created) {
-        created.update({
-            password: created.generateHash(user.password)
-        })
+        console.log(created);
+    }).catch(function (err) {
+        err.errors.forEach(function (error) {
+            console.error("ERROR: ", error.type, ", field: ", error.path);
+        });
+        res.redirect("/register");
     });
 });
 

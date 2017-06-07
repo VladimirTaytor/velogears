@@ -1,5 +1,5 @@
 "use strict";
-var bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');
 
 module.exports = function (sequelize, DataTypes) {
     var User = sequelize.define("User", {
@@ -16,7 +16,10 @@ module.exports = function (sequelize, DataTypes) {
             },
             password: {
                 type: DataTypes.STRING,
-                allowNull: false
+                allowNull: false,
+                set(val) {
+                    this.setDataValue('password', this.generateHash(val));
+                }
             },
             email: {
                 type: DataTypes.STRING,
