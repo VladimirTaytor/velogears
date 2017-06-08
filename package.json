@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "production": "NODE_ENV='production' node ./bin/www"
+    "production": "NODE_ENV='production' node ./bin/www",
+    "test": "npm run test-unit",
+    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -23,6 +25,9 @@
   },
   "devDependencies": {
     "less": "^2.7.2",
-    "less-plugin-clean-css": "^1.5.1"
+    "less-plugin-clean-css": "^1.5.1",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.0.2",
+    "sqlite3": "^3.0.8"
   }
 }
