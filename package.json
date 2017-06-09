@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "production": "NODE_ENV='production' node ./bin/www",
     "test": "npm run test-unit",
-    "test-unit": "cross-env NODE_ENV=test ./node_modules/.bin/mocha test/unit/*.test.js"
+    "test-unit": "cross-env NODE_ENV=test nyc --reporter=lcov ./node_modules/.bin/mocha test/unit/*.test.js"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
@@ -24,10 +24,11 @@
     "serve-favicon": "~2.4.2"
   },
   "devDependencies": {
+    "expect.js": "^0.3.1",
     "less": "^2.7.2",
     "less-plugin-clean-css": "^1.5.1",
-    "expect.js": "^0.3.1",
     "mocha": "^3.0.2",
+    "nyc": "^11.0.2",
     "sqlite3": "^3.0.8"
   }
 }
