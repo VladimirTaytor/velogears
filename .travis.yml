@@ -20,3 +20,6 @@ addons:
      repo_token: $CODE_CLIMAT_TOKEN
 env:
  - TRAVIS=travis CXX=g++-4.8
+cache:
+ directories:
+ - $HOME/node_modules

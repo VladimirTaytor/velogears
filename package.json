@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "production": "NODE_ENV='production' node ./bin/www",
     "test": "npm run test-unit",
-    "test-unit": "cross-env NODE_ENV=test nyc --reporter=lcov ./node_modules/.bin/mocha test/unit/*.test.js"
+    "test-unit": "cross-env NODE_ENV=test nyc --reporter=lcov ./node_modules/.bin/mocha --timeout 15000 test/unit/*.test.js"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",
